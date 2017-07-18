@@ -15,7 +15,7 @@ public class EmployeeTest  {
 
     @Before
     public void setUp() {
-        mary = new Employee("Mary Magnificent", 45000, 2005, 4, 5);
+        mary = new Employee("Mary Magnificent", 45000.00, 2005, 4, 5);
     }
 
     @Test
@@ -25,12 +25,12 @@ public class EmployeeTest  {
 
     @Test
     public void testGetSalary() {
-        assertEquals(45000, mary.getSalary(), 0.001);
+        assertEquals(45000.00, mary.getSalary(), 0.001);
     }
 
     @Test
     public void testRaiseSalary() {
-        double newSalary = 45000 * 1.05;
+        double newSalary = 45000.00 * 1.05;
         mary.raiseSalary(5);
         assertTrue(newSalary == mary.getSalary());
     }

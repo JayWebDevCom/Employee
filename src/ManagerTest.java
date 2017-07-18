@@ -9,7 +9,7 @@ public class ManagerTest {
 
     @Before
     public void setUp() throws Exception {
-        peter = new Manager("Peter Griffin", 34000, 2005, 12, 11);
+        peter = new Manager("Peter Griffin", 34000.00, 2005, 12, 11);
     }
 
     @Test
@@ -31,14 +31,14 @@ public class ManagerTest {
 
     @Test
     public void managerBonus(){
-        peter.setBonus(5000);
-        assertEquals(5000, peter.getBonus(), 0.001);
+        peter.setBonus(5000.00);
+        assertEquals(5000.00, peter.getBonus(), 0.001);
     }
 
     @Test
     public void managerSalary(){
-        peter.setBonus(4000);
-        assertEquals(38000, peter.getSalary(), 0.01);
+        peter.setBonus(4000.00);
+        assertEquals(38000.00, peter.getSalary(), 0.01);
     }
 
 }
