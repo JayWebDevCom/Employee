@@ -20,6 +20,10 @@ class Manager extends Employee {
         return baseSalary + getBonus();
     }
 
+    public void print(){
+        System.out.print(getName());
+    }
+
 
 
 }

@@ -1,6 +1,10 @@
 import org.junit.Before;
 import org.junit.Test;
 
+import java.io.ByteArrayOutputStream;
+import java.io.OutputStream;
+import java.io.PrintStream;
+
 import static org.junit.Assert.*;
 
 public class ManagerTest {
@@ -25,20 +29,28 @@ public class ManagerTest {
     }
 
     @Test
-    public void managerDefaultBonus(){
+    public void testManagerDefaultBonus(){
         assertEquals(0, peter.getBonus(), 0.01);
     }
 
     @Test
-    public void managerBonus(){
+    public void testManagerBonus(){
         peter.setBonus(5000.00);
         assertEquals(5000.00, peter.getBonus(), 0.001);
     }
 
     @Test
-    public void managerSalary(){
+    public void testManagerSalary(){
         peter.setBonus(4000.00);
         assertEquals(38000.00, peter.getSalary(), 0.01);
+    }
+
+    @Test public void testManagerNameToConsole(){
+        OutputStream os = new ByteArrayOutputStream();
+        PrintStream ps = new PrintStream(os);
+        System.setOut(ps);
+        peter.print();
+        assertEquals(peter.getName(), os.toString());
     }
 
 }
