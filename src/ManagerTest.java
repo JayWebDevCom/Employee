@@ -17,4 +17,11 @@ public class ManagerTest {
         assertEquals("Peter Griffin", peter.getName());
     }
 
+    @Test
+    public void testManagerID() {
+        peter.setID();
+        assertEquals(1, peter.getID());
+        assertEquals(2, Manager.getNextID());
+    }
+
 }
