@@ -10,12 +10,14 @@ public class EmployeeRunner {
         staff[1] = new Employee("Hex Hacker", 65000, 1986, 11, 14);
         staff[2] = new Employee("Tammy Tester", 55000, 1985, 10, 13);
 
-        for (Employee emp : staff)
+        for (Employee emp : staff) {
             emp.raiseSalary(5);
+            emp.setID();
+        }
 
         for (Employee emp : staff)
-            System.out.println("name = " + emp.getName() + ", salary = " + emp.getSalary() +
-            " hired on " + emp.getHireDay());
+            System.out.println("name = " + emp.getName() + ", ID = " + emp.getID() + ", salary = " + emp.getSalary() +
+            ", hired on " + emp.getHireDay());
     }
 
 }
