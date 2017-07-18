@@ -7,6 +7,21 @@ class Employee {
     private String name;
     private double salary;
     private LocalDate hireDay;
+    private int ID;
+    private static int nextID = 1;
+
+    public int getID() {
+        return ID;
+    }
+
+    public void setID(){
+        ID = nextID;
+        nextID++;
+    }
+
+    public static int getNextID() {
+        return nextID;
+    }
 
     public Employee(String n, double s, int year, int month, int day) {
         name = n;
@@ -29,4 +44,5 @@ class Employee {
     public double getSalary() {
         return salary;
     }
+
 }

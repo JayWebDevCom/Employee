@@ -1,9 +1,9 @@
 import org.junit.Before;
+import org.junit.Ignore;
 import org.junit.Test;
-
 import java.time.LocalDate;
-
 import static org.junit.Assert.*;
+
 
 /**
  * Created by jaiye on 18/07/17.
@@ -38,6 +38,16 @@ public class EmployeeTest  {
     @Test
     public void testGetHireDay() {
         assertEquals(LocalDate.of(2005, 04, 05), mary.getHireDay());
+    }
+
+
+    @Test
+    public void testID() {
+        assertEquals(1, Employee.getNextID());
+        assertEquals(1, mary.getNextID());
+        mary.setID();
+        assertEquals(1, mary.getID());
+        assertEquals(2, Employee.getNextID());
     }
 
 }
