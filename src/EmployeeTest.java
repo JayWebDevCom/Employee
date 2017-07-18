@@ -1,21 +1,43 @@
+import org.junit.Before;
+import org.junit.Test;
+
+import java.time.LocalDate;
+
+import static org.junit.Assert.*;
+
 /**
  * Created by jaiye on 18/07/17.
  */
-public class EmployeeTest {
 
-    public static void main(String[] args){
-        Employee[] staff = new Employee[3];
+public class EmployeeTest  {
 
-        staff[0] = new Employee("Jane Changer", 75000, 1987, 12, 15);
-        staff[1] = new Employee("Hex Hacker", 65000, 1986, 11, 14);
-        staff[2] = new Employee("Tammy Tester", 55000, 1985, 10, 13);
+    Employee mary;
 
-        for (Employee emp : staff)
-            emp.raiseSalary(5);
+    @Before
+    public void setUp() {
+        mary = new Employee("Mary Magnificent", 45000, 2005, 4, 5);
+    }
 
-        for (Employee emp : staff)
-            System.out.println("name = " + emp.getName() + ", salary = " + emp.getSalary() +
-            " hired on " + emp.getHireDay());
+    @Test
+    public void testGetName() {
+        assertEquals("Mary Magnificent", mary.getName());
+    }
+
+    @Test
+    public void testGetSalary() {
+        assertEquals(45000, mary.getSalary(), 0.001);
+    }
+
+    @Test
+    public void testRaiseSalary() {
+        double newSalary = 45000 * 1.05;
+        mary.raiseSalary(5);
+        assertTrue(newSalary == mary.getSalary());
+    }
+
+    @Test
+    public void testGetHireDay() {
+        assertEquals(LocalDate.of(2005, 04, 05), mary.getHireDay());
     }
 
 }
