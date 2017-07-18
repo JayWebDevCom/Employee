@@ -24,4 +24,21 @@ public class ManagerTest {
         assertEquals(2, Manager.getNextID());
     }
 
+    @Test
+    public void managerDefaultBonus(){
+        assertEquals(0, peter.getBonus(), 0.01);
+    }
+
+    @Test
+    public void managerBonus(){
+        peter.setBonus(5000);
+        assertEquals(5000, peter.getBonus(), 0.001);
+    }
+
+    @Test
+    public void managerSalary(){
+        peter.setBonus(4000);
+        assertEquals(38000, peter.getSalary(), 0.01);
+    }
+
 }
