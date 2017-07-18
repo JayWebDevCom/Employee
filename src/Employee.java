@@ -10,6 +10,12 @@ class Employee {
     private int ID;
     private static int nextID = 1;
 
+    public Employee(String n, double s, int year, int month, int day) {
+        name = n;
+        salary = s;
+        hireDay = LocalDate.of(year, month, day);
+    }
+
     public int getID() {
         return ID;
     }
@@ -21,12 +27,6 @@ class Employee {
 
     public static int getNextID() {
         return nextID;
-    }
-
-    public Employee(String n, double s, int year, int month, int day) {
-        name = n;
-        salary = s;
-        hireDay = LocalDate.of(year, month, day);
     }
 
     public String getName() {
