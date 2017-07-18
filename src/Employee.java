@@ -8,9 +8,9 @@ class Employee {
     private double salary;
     private LocalDate hireDay;
 
-    public Employee(String name, double salary, int year, int month, int day) {
-        name = name;
-        salary = salary;
+    public Employee(String n, double s, int year, int month, int day) {
+        name = n;
+        salary = s;
         hireDay = LocalDate.of(year, month, day);
     }
 
@@ -19,7 +19,7 @@ class Employee {
     }
 
     public void raiseSalary(int byPercent) {
-        salary = salary * (1 + (byPercent/100));
+        salary += salary * byPercent/100;
     }
 
     public LocalDate getHireDay() {
